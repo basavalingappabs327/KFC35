@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CTC Generator</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="card">
+
+      <h1>KFC 35 ಪತ್ರ</h1>
+
+      <p class="subtitle">
+       ಖಾಲಿ ಜಾಗಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ
+      </p>
+
+
+      <form id="ctcForm">
+
+        <!-- DESIGNATION -->
+
+        <div class="form-group">
+
+          <label for="designation">
+            ಸಂಸ್ಥೆಯ ಮುಖ್ಯಸ್ಥರು
+          </label>
+
+          <select id="designation" required>
+
+            <option value="">
+              ಆಯ್ಕೆ ಮಾಡಿ
+            </option>
+
+            <option value="ಮುಖ್ಯ ಪಶುವೈದ್ದಾಧಿಕಾರಿಗಳು">
+              ಮುಖ್ಯ ಪಶುವೈದ್ದಾಧಿಕಾರಿಗಳು
+            </option>
+
+            <option value="ಹಿರಿಯ ಪಶುವೈದ್ದಾಧಿಕಾರಿಗಳು">
+              ಹಿರಿಯ ಪಶುವೈದ್ದಾಧಿಕಾರಿಗಳು
+            </option>
+
+            <option value="ಪಶುವೈದ್ದಾಧಿಕಾರಿಗಳು">
+              ಪಶುವೈದ್ದಾಧಿಕಾರಿಗಳು
+            </option>
+
+            <option value="ಉಪ ನಿರ್ದೇಶಕರು">
+              ಉಪ ನಿರ್ದೇಶಕರು
+            </option>
+
+            <option value="ಹಿರಿಯ ಪಶುವೈದ್ಯಕೀಯ ಪರೀಕ್ಷಕರು">
+              ಹಿರಿಯ ಪಶುವೈದ್ಯಕೀಯ ಪರೀಕ್ಷಕರು
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- INSTITUTION -->
+
+        <div class="form-group">
+
+          <label for="institution">
+            ಸಂಸ್ಥೆ
+          </label>
+
+          <select id="institution" required>
+
+            <option value="">
+              ಆಯ್ಕೆ ಮಾಡಿ
+            </option>
+
+            <option value="ಪಶು ಆಸ್ಪತ್ರೆ">
+              ಪಶು ಆಸ್ಪತ್ರೆ
+            </option>
+
+            <option value="ಪಶು ಚಿಕಿತ್ಸಾಲಯ">
+              ಪಶು ಚಿಕಿತ್ಸಾಲಯ
+            </option>
+
+            <option value="ಪ್ರಾಥಮಿಕ ಪಶು ಚಿಕಿತ್ಸ ಕೇಂದ್ರ">
+              ಪ್ರಾಥಮಿಕ ಪಶು ಚಿಕಿತ್ಸ ಕೇಂದ್ರ
+            </option>
+
+          </select>
+
+        </div>
+        <!-- PLACE -->
+
+        <div class="form-group">
+
+          <label for="place">
+            ಸ್ಥಳ
+          </label>
+
+          <input
+            type="text"
+            id="place"
+            placeholder="ಸಂಸ್ಥೆಯ ಸ್ಥಳವನ್ನು ನಮೂದಿಸಿ"
+            required
+          >
+
+        </div>
+        <!-- RESPONSIBLE PERSON -->
+
+        <div class="form-group">
+
+          <label for="responsibleperson">
+            ಸಂಸ್ಥೆಯ ದಾಸ್ತಾನು ಪರೀಕ್ಷಿಸಿದ ವ್ಯಕ್ತಿಯ ಹೆಸರು
+          </label>
+
+          <input
+            type="text"
+            id="responsibleperson"
+            placeholder="ವ್ಯಕ್ತಿಯ ಹೆಸರು ನಮೂದಿಸಿ"
+            required
+          >
+
+        </div>
+
+
+        <!-- DATE -->
+
+        <div class="form-group">
+
+          <label for="yearmonthdate">
+           ಪರಿಕ್ಷಿಸಿದ ದಿನಾಂಕ
+          </label>
+
+          <input
+            type="date"
+            id="yearmonthdate"
+            required
+          >
+
+        </div>        
+
+
+        
+
+
+        
+        <!-- GENERATE -->
+
+        <button
+          type="submit"
+          id="generateButton"
+        >
+          Generate KFC 35
+        </button>
+
+      </form>
+
+
+      <!-- WAITING MESSAGE -->
+
+      <div
+        id="waitingMessage"
+        class="waiting hidden"
+      >
+
+        <div class="spinner"></div>
+
+        <div class="pleaseWait">
+          Please wait…
+        </div>
+
+        <div id="waitingSeconds">
+          Preparing your KFC35 PDF
+        </div>
+
+      </div>
+
+
+      <!-- SUCCESS -->
+
+      <div
+        id="successMessage"
+        class="success hidden"
+      >
+
+        KFC35 PDF is ready.
+
+      </div>
+
+
+      <!-- DOWNLOAD -->
+
+      <button
+        id="downloadButton"
+        class="download hidden"
+        type="button"
+      >
+        Download KFC35 PDF
+      </button>
+
+
+      <!-- ERROR -->
+
+      <div
+        id="errorMessage"
+        class="error hidden"
+      ></div>
+
+
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
